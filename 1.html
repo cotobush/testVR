@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Meta Quest 3 WebVRアプリ</title>
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  <script src="https://cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
+</head>
+<body>
+  <a-scene physics="gravity: -9.8">
+    <!-- カメラの設定 -->
+    <a-entity camera position="0 1.6 0" look-controls>
+      <a-cursor></a-cursor>
+    </a-entity>
+
+    <!-- 球状のボール -->
+    <a-sphere position="0 2 -3" radius="0.5" color="#FF0000" dynamic-body></a-sphere>
+
+    <!-- 床 -->
+    <a-box position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4" static-body></a-box>
+
+    <!-- 手 -->
+    <a-entity id="rightHand" laser-controls="hand: right"></a-entity>
+    <a-entity id="leftHand" laser-controls="hand: left"></a-entity>
+  </a-scene>
+</body>
+</html>
